@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Chekeo · Chequeá antes de aceptar un cheque</title>
+<meta name="description" content="Antes de aceptar un cheque, consultá en segundos si quien lo firmó tiene cheques rechazados y cómo está en el BCRA. Semáforo claro, datos oficiales. 10 consultas gratis.">
+<meta name="theme-color" content="#101F8C">
+<meta property="og:title" content="Chekeo · Chequeá antes de aceptar un cheque">
+<meta property="og:description" content="Consultá en segundos si quien te da el cheque es de fiar. Datos oficiales del BCRA y ARCA. 10 consultas gratis.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' rx='44' fill='%232547FF'/%3E%3Ccircle cx='100' cy='100' r='62' fill='none' stroke='white' stroke-width='22' stroke-linecap='round' stroke-dasharray='281.3 108.2' transform='rotate(50 100 100)'/%3E%3Cpath d='M64 106 90 130 160 46' fill='none' stroke='white' stroke-width='22' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="iso" viewBox="0 0 200 200">
+      <circle cx="100" cy="100" r="62" fill="none" stroke="currentColor" stroke-width="22" stroke-linecap="round" stroke-dasharray="281.3 108.2" transform="rotate(50 100 100)"/>
+      <path d="M 64 106 L 90 130 L 160 46" fill="none" stroke="currentColor" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="tick" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10" fill="currentColor" opacity=".16"/>
+      <path d="M7.5 12.4l3 2.8 6-6.9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- Link de la app: cuando esté activo app.chekeo.com.ar, reemplazar https://api.chekeo.com.ar/ en todos los botones -->
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="#top" aria-label="Chekeo, inicio"><svg aria-hidden="true"><use href="#iso"/></svg>Chekeo</a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="#como-funciona">Cómo funciona</a>
+      <a href="#semaforo">Semáforo</a>
+      <a href="#planes">Planes</a>
+      <a href="#preguntas">Preguntas</a>
+      <a class="login" href="https://api.chekeo.com.ar/">Ingresar</a>
+      <a class="btn btn-white" href="https://api.chekeo.com.ar/">Probar gratis</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-dots"></div>
+    <svg class="hero-arc" viewBox="0 0 200 200" aria-hidden="true">
+      <circle cx="100" cy="100" r="62" fill="none" stroke="#FFFFFF" stroke-opacity=".12" stroke-width="22" stroke-linecap="round" stroke-dasharray="281.3 108.2" transform="rotate(50 100 100)"/>
+    </svg>
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow"><i></i>Datos oficiales del BCRA y ARCA</span>
+        <h1>Chequeá antes de <em>aceptar un cheque.</em></h1>
+        <p class="sub">Ingresá el CUIT del emisor del cheque y en segundos sabés si tiene cheques rechazados y cómo está con los bancos. Un semáforo claro para decidir sin llamar a nadie.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-white" href="https://api.chekeo.com.ar/">Probar gratis</a>
+          <a class="btn btn-ghost" href="#como-funciona">Ver cómo funciona</a>
+        </div>
+        <p class="hero-note">10 consultas gratis al registrarte. Sin tarjeta.</p>
+        <div class="proof">
+          <div><b class="num">10</b><span>consultas gratis, sin vencimiento</span></div>
+          <div><b>Segundos</b><span>para tener la respuesta</span></div>
+          <div><b>3 colores</b><span>para decidir: aceptar, revisar o no</span></div>
+        </div>
+      </div>
+
+      <div class="phone" role="img" aria-label="Ejemplo de resultado en Chekeo: riesgo bajo, sin cheques rechazados, situación 1 en el BCRA y CUIT activo en ARCA.">
+        <div class="screen">
+          <div class="scr-top">
+            <span class="logo-sm"><svg><use href="#iso"/></svg>Chekeo</span>
+            <span>Resultado de ejemplo</span>
+          </div>
+          <div class="cuit">
+            <div><small>Quien firmó el cheque</small><b>Distribuidora Ejemplo SRL</b></div>
+            <span class="mono">30-•••••••-4</span>
+          </div>
+          <div class="verdict">
+            <div class="light" aria-hidden="true"><i></i><i></i><i class="g"></i></div>
+            <div><b>Riesgo bajo</b><span>Podés aceptar el cheque</span></div>
+          </div>
+          <div class="rows">
+            <div class="row"><span>Cheques rechazados (12 meses)</span><b class="okc">Ninguno</b></div>
+            <div class="row"><span>Situación con los bancos</span><b>1 · Normal</b></div>
+            <div class="row"><span>CUIT en ARCA</span><b class="okc">Activo</b></div>
+          </div>
+          <p class="src">Fuente: Central de Deudores del BCRA · Padrón de ARCA</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEMA -->
+  <section class="section">
+    <div class="wrap problem-grid">
+      <div>
+        <span class="label">El problema</span>
+        <h2 style="margin-top:16px">Un cheque rechazado te puede comer la ganancia del mes.</h2>
+        <p class="lede" style="margin-top:18px">Si trabajás solo o con un equipo chico, no tenés a nadie que revise a cada cliente. Aceptás el cheque confiando, y si rebota, el problema es tuyo.</p>
+        <div class="problem-box">
+          <svg viewBox="0 0 200 200" aria-hidden="true"><use href="#iso"/></svg>
+          <h3>La información para decidir existe. Es pública y está en el BCRA.</h3>
+          <p>Chekeo la busca por vos y te la traduce en una respuesta simple: aceptar, revisar o pedir garantías.</p>
+        </div>
+      </div>
+      <div class="pains">
+        <div class="pain">
+          <span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5"/><path d="M12 16.2v.1"/></svg></span>
+          <div><q>"Me pagaron con un cheque y rebotó."</q><p>Antes de aceptarlo, ves si quien lo firmó <strong>ya tuvo cheques rechazados</strong> en el último año.</p></div>
+        </div>
+        <div class="pain">
+          <span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7"/><path d="M18 14c2 .6 3 2.6 3 6"/></svg></span>
+          <div><q>"Me ofrecen un cheque de alguien que no conozco."</q><p>Con el CUIT que figura en el cheque sabés <strong>cómo está esa persona o empresa</strong> con los bancos.</p></div>
+        </div>
+        <div class="pain">
+          <span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+          <div><q>"¿Y si el cheque es robado?"</q><p>Con el banco y el número del cheque verificás <strong>gratis</strong> si fue denunciado como robado o perdido.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEMÁFORO -->
+  <section class="section sem" id="semaforo">
+    <div class="wrap">
+      <div class="sem-head">
+        <div>
+          <span class="label">El semáforo</span>
+          <h2 style="margin-top:16px">Una respuesta, tres colores, una decisión.</h2>
+        </div>
+        <p class="lede">Chekeo mira los cheques rechazados de los últimos 12 meses y si las multas están pagas. Con eso te dice qué hacer, siempre con el detalle escrito.</p>
+      </div>
+      <div class="lights">
+        <div class="lv lv-ok">
+          <span class="dot"></span>
+          <h3>Riesgo bajo</h3>
+          <span class="act">Podés aceptarlo.</span>
+          <p>No tiene cheques rechazados en los últimos 12 meses.</p>
+        </div>
+        <div class="lv lv-warn">
+          <span class="dot"></span>
+          <h3>Riesgo medio</h3>
+          <span class="act">Revisá antes de aceptar.</span>
+          <p>Tuvo cheques rechazados, pero ya pagó las multas.</p>
+        </div>
+        <div class="lv lv-bad">
+          <span class="dot"></span>
+          <h3>Riesgo alto</h3>
+          <span class="act">No lo aceptes sin garantías.</span>
+          <p>Tiene cheques rechazados con multas que todavía no pagó.</p>
+        </div>
+      </div>
+      <p class="note">El semáforo es una ayuda para decidir, no una garantía de cobro. La decisión final siempre es tuya.</p>
+    </div>
+  </section>
+
+  <!-- QUÉ TE MUESTRA -->
+  <section class="section">
+    <div class="wrap">
+      <span class="label">Qué ves en cada consulta</span>
+      <h2 style="margin-top:16px; max-width:22ch">Todo lo que necesitás saber, en una sola pantalla.</h2>
+      <div class="feats">
+        <div class="feat">
+          <span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/><path d="M7 15h4"/></svg></span>
+          <h3>Cheques rechazados</h3>
+          <p>Si quien firmó el cheque tuvo cheques rechazados y si pagó las multas.</p>
+        </div>
+        <div class="feat">
+          <span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10"/><path d="M10 20V4"/><path d="M16 20v-7"/><path d="M22 20H2"/></svg></span>
+          <h3>Situación con los bancos</h3>
+          <p>Cómo lo califica la Central de Deudores del BCRA según cómo viene pagando.</p>
+        </div>
+        <div class="feat">
+          <span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V10M19 21V10M9.5 21V10M14.5 21V10"/><path d="M12 3l9 5H3z"/></svg></span>
+          <h3>Datos de ARCA</h3>
+          <p>Razón social, domicilio fiscal, actividad y si la clave fiscal está activa.</p>
+        </div>
+        <div class="feat">
+          <span class="tag">Gratis</span>
+          <span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+          <h3>Cheque denunciado</h3>
+          <p>Con el banco y el número del cheque, sabés si fue denunciado como robado o perdido.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CÓMO FUNCIONA -->
+  <section class="section steps-sec" id="como-funciona">
+    <div class="wrap">
+      <span class="label">Cómo funciona</span>
+      <h2 style="margin-top:16px; max-width:20ch">Del cheque a la decisión en tres pasos</h2>
+      <p class="lede" style="margin-top:16px">Sin papeles, sin esperar y sin llamar a nadie.</p>
+      <div class="steps">
+        <div class="step">
+          <span class="n">1</span>
+          <h3>Ingresá el CUIT o sacale una foto</h3>
+          <p>Escribí el CUIT que figura en el cheque, o sacale una foto y Chekeo lo completa solo. Vos confirmás antes de consultar.</p>
+          <div class="demo"><div class="field-demo"><span>CUIT</span>30-•••••••-4</div></div>
+        </div>
+        <div class="step">
+          <span class="n">2</span>
+          <h3>Mirá el semáforo</h3>
+          <p>Cheques rechazados, situación con los bancos y datos de ARCA, con una recomendación clara.</p>
+          <div class="demo"><div class="field-demo"><span>Resultado</span><span class="chip"><i></i>Riesgo bajo</span></div></div>
+        </div>
+        <div class="step">
+          <span class="n">3</span>
+          <h3>Seguí tus cheques en cartera</h3>
+          <p>Con un plan pago cargás los cheques que tenés en "Mis cheques" y Chekeo los revisa todos los días. Si algo cambia, te avisamos por mail.</p>
+          <div class="demo"><div class="alert-demo"><svg><use href="#iso"/></svg><div><b>Cambió uno de tus cheques</b><span>Quien lo firmó tiene un cheque rechazado nuevo.</span></div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANES -->
+  <section class="section" id="planes">
+    <div class="wrap">
+      <span class="label">Planes</span>
+      <h2 style="margin-top:16px; max-width:24ch">Empezá gratis. Pasate a un plan cuando lo necesites.</h2>
+      <div class="plans">
+        <div class="plan">
+          <span class="tag">Para probar</span>
+          <h3>Free</h3>
+          <div class="price num">$0</div>
+          <div><div class="qty">10 consultas de por vida</div><div class="per">No vencen</div></div>
+          <ul>
+            <li><svg style="color:var(--ok)"><use href="#tick"/></svg>Semáforo con recomendación</li>
+            <li><svg style="color:var(--ok)"><use href="#tick"/></svg>Cheques rechazados, BCRA y ARCA</li>
+            <li><svg style="color:var(--ok)"><use href="#tick"/></svg>Consulta de cheque denunciado gratis</li>
+          </ul>
+          <a class="btn btn-line" href="https://api.chekeo.com.ar/">Crear cuenta gratis</a>
+        </div>
+        <div class="plan">
+          <span class="tag">Emprendedores y pymes</span>
+          <h3>Chekeo Pro</h3>
+          <div class="price num">$9.900<small> /mes</small></div>
+          <div><div class="qty">30 consultas por mes</div><div class="per">$330 por consulta</div></div>
+          <ul>
+            <li><svg style="color:var(--ok)"><use href="#tick"/></svg>Todo lo del plan Free</li>
+            <li><svg style="color:var(--ok)"><use href="#tick"/></svg>"Mis cheques": seguimiento diario de los cheques en cartera</li>
+            <li><svg style="color:var(--ok)"><use href="#tick"/></svg>Aviso por mail si algo cambia</li>
+            <li><svg style="color:var(--ok)"><use href="#tick"/></svg>Te das de baja cuando quieras</li>
+          </ul>
+          <a class="btn btn-brand" href="https://api.chekeo.com.ar/">Empezar con Pro</a>
+        </div>
+        <div class="plan dark">
+          <svg class="plan-arc" viewBox="0 0 200 200" aria-hidden="true"><use href="#iso"/></svg>
+          <span class="tag">Mejor precio por consulta</span>
+          <h3>Chekeo Pro+</h3>
+          <div class="price num">$13.900<small> /mes</small></div>
+          <div><div class="qty">50 consultas por mes</div><div class="per">$278 por consulta</div></div>
+          <ul>
+            <li><svg style="color:#7DF07D"><use href="#tick"/></svg>Todo lo de Chekeo Pro</li>
+            <li><svg style="color:#7DF07D"><use href="#tick"/></svg>Para quien recibe cheques todas las semanas</li>
+            <li><svg style="color:#7DF07D"><use href="#tick"/></svg>Te das de baja cuando quieras</li>
+          </ul>
+          <a class="btn btn-white" href="https://api.chekeo.com.ar/">Empezar con Pro+</a>
+        </div>
+      </div>
+      <div class="plans-foot">
+        <span>Cambiás de plan cuando quieras, sin esperar a fin de mes.</span>
+        <span>¿Necesitás más de 50 consultas por mes? Escribinos a <a href="mailto:empresas@chekeo.com.ar"><b>empresas@chekeo.com.ar</b></a></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="preguntas" style="padding-top:0">
+    <div class="wrap faq-grid">
+      <div>
+        <span class="label">Preguntas</span>
+        <h2 style="margin-top:16px">Lo que todos preguntan antes de aceptar un cheque</h2>
+        <p class="lede" style="margin-top:16px">¿Te queda otra duda? Escribinos a <a href="mailto:empresas@chekeo.com.ar">empresas@chekeo.com.ar</a>.</p>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>¿Qué CUIT tengo que consultar?<span class="pm" aria-hidden="true">+</span></summary>
+          <p>El de quien firmó el cheque, que figura impreso en el cheque. Si te lo pasa un cliente que lo recibió de otra persona, igual consultás el CUIT que está en el cheque.</p>
+        </details>
+        <details>
+          <summary>¿De dónde salen los datos?<span class="pm" aria-hidden="true">+</span></summary>
+          <p>De fuentes oficiales y públicas: la Central de Deudores y los registros de cheques rechazados y denunciados del BCRA, y el padrón de ARCA (ex AFIP). Chekeo los junta y te los explica.</p>
+        </details>
+        <details>
+          <summary>¿La persona se entera de que la consulté?<span class="pm" aria-hidden="true">+</span></summary>
+          <p>No. Chekeo consulta información pública; no se le avisa a nadie.</p>
+        </details>
+        <details>
+          <summary>¿Qué pasa cuando se terminan las 10 consultas gratis?<span class="pm" aria-hidden="true">+</span></summary>
+          <p>Elegís un plan mensual para seguir consultando. Las 10 consultas gratis no vencen, así que las podés usar a tu ritmo. Y te das de baja cuando quieras.</p>
+        </details>
+        <details>
+          <summary>¿Volver a consultar un CUIT descuenta una consulta?<span class="pm" aria-hidden="true">+</span></summary>
+          <p>Sí. Desde tu historial podés volver a ver cualquier CUIT con datos actualizados en el momento, pero como se vuelve a pedir la información al BCRA, cuenta como una consulta nueva.</p>
+        </details>
+        <details>
+          <summary>¿Chekeo me garantiza que voy a cobrar el cheque?<span class="pm" aria-hidden="true">+</span></summary>
+          <p>No. Chekeo te muestra la información disponible para que decidas mejor, pero no puede garantizar que un cheque tenga fondos el día que lo deposites.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="section cta" id="empezar">
+    <svg class="cta-arc" viewBox="0 0 200 200" aria-hidden="true">
+      <circle cx="100" cy="100" r="62" fill="none" stroke="#FFFFFF" stroke-opacity=".1" stroke-width="22" stroke-linecap="round" stroke-dasharray="281.3 108.2" transform="rotate(230 100 100)"/>
+    </svg>
+    <div class="wrap cta-in">
+      <h2>El próximo cheque, aceptalo sabiendo.</h2>
+      <p class="sub">Creá tu cuenta y hacé tu primera consulta hoy. Tenés 10 gratis.</p>
+      <div class="hero-ctas">
+        <!-- CAMBIAR URL POR https://aap.chekeo.com.ar -->
+        <a class="btn btn-white" href="https://aap.chekeo.com.ar/">Crear cuenta gratis</a>
+        <a class="btn btn-ghost" href="https://aap.chekeo.com.ar/">Ya tengo cuenta</a>
+      </div>
+      <p class="fine">Sin tarjeta de crédito para empezar.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <a class="logo" href="#top"><svg aria-hidden="true"><use href="#iso"/></svg>Chekeo</a>
+      <nav aria-label="Pie">
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#semaforo">Semáforo</a>
+        <a href="#planes">Planes</a>
+        <a href="#preguntas">Preguntas</a>
+        <a href="mailto:empresas@chekeo.com.ar">Contacto</a>
+      </nav>
+    </div>
+    <p class="legal">Chekeo no es una entidad financiera ni garantiza el cobro de cheques. La información proviene de fuentes públicas del BCRA y de ARCA y puede tener demoras respecto de lo que informan las entidades. © <span id="yr">2026</span> Chekeo.</p>
+  </div>
+</footer>
+
+
+</body>
+</html>
+<script>
+(function(){
+  var nav=document.getElementById('nav');
+  function onScroll(){ nav.classList.toggle('scrolled', window.scrollY>40); }
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+  document.getElementById('yr').textContent=new Date().getFullYear();
+})();
+</script>
