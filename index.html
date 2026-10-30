@@ -1,15 +1,8 @@
 <!doctype html>
 <html lang="es-AR">
 <head>
-  <!-- Google Tag Manager -->
-<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-WKT6ZRDB"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-</script>
 
-  <!-- Google Analytics --> <!-- Google tag (gtag.js) -->
+ <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8620Z8BEFG"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -334,8 +327,8 @@
       <p class="sub">Creá tu cuenta y hacé tu primera consulta hoy. Tenés 10 gratis.</p>
       <div class="hero-ctas">
         <!-- CAMBIAR URL POR https://aap.chekeo.com.ar -->
-        <a class="btn btn-white" href="https://aap.chekeo.com.ar/">Crear cuenta gratis</a>
-        <a class="btn btn-ghost" href="https://aap.chekeo.com.ar/">Ya tengo cuenta</a>
+        <a class="btn btn-white" href="https://api.chekeo.com.ar/">Crear cuenta gratis</a>
+        <a class="btn btn-ghost" href="https://api.chekeo.com.ar/">Ya tengo cuenta</a>
       </div>
       <p class="fine">Sin tarjeta de crédito para empezar.</p>
     </div>
@@ -352,21 +345,35 @@
         <a href="#planes">Planes</a>
         <a href="#preguntas">Preguntas</a>
         <a href="mailto:empresas@chekeo.com.ar">Contacto</a>
-        <a href="#terminos-y-privacidad">Términos y condiciones - Políticas de privacidad</a>
+        <a href="/terminos-y-privacidad">Términos y condiciones - Políticas de privacidad</a>
       </nav>
     </div>
     <p class="legal">Chekeo no es una entidad financiera ni garantiza el cobro de cheques. La información proviene de fuentes públicas del BCRA y de ARCA y puede tener demoras respecto de lo que informan las entidades. © <span id="yr">2026</span> Chekeo.</p>
   </div>
 </footer>
-
-
-</body>
-</html>
 <script>
 (function(){
   var nav=document.getElementById('nav');
   function onScroll(){ nav.classList.toggle('scrolled', window.scrollY>40); }
   window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
   document.getElementById('yr').textContent=new Date().getFullYear();
+
+  // Enlaces internos sin # en la URL
+  document.addEventListener('click', function(e){
+    var a=e.target.closest('a[href^="#"]');
+    if(!a) return;
+    var target=document.getElementById(a.getAttribute('href').slice(1));
+    if(!target) return;
+    e.preventDefault();
+    var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    target.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block:'start'});
+    target.setAttribute('tabindex','-1');
+    target.focus({preventScroll:true});
+  });
+
+  // Si alguien entra con un # en la URL, lo limpia
+  if(location.hash) history.replaceState(null,'',location.pathname+location.search);
 })();
 </script>
+</body>
+</html>
